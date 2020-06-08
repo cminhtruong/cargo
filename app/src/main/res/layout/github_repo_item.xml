@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="repo"
+            type="app.el_even.com.cargo.network.GithubRepo" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/repo_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{repo.owner.avatarUrl}"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:ems="10"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="4dp"
+            android:textSize="12sp"
+            app:textValue="@{repo.name}"
+            tools:text="author" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="4dp"
+            android:textSize="12sp"
+            app:textValue="@{String.valueOf(repo.stargazersCount)}"
+            tools:text="author" />
+    </FrameLayout>
+</layout>
