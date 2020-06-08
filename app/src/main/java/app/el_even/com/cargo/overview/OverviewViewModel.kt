@@ -22,10 +22,6 @@ import java.lang.Exception
  */
 class OverviewViewModel : ViewModel() {
 
-    private val _response = MutableLiveData<String>()
-    val response: LiveData<String>
-        get() = _response
-
     private val _items = MutableLiveData<Items>()
     val items: LiveData<Items>
         get() = _items
@@ -33,10 +29,6 @@ class OverviewViewModel : ViewModel() {
     private val _githubRepos = MutableLiveData<List<GithubRepo>>()
     val githubRepos: LiveData<List<GithubRepo>>
         get() = _githubRepos
-
-    private val _githubRepo = MutableLiveData<GithubRepo>()
-    val githubRepo: LiveData<GithubRepo>
-        get() = _githubRepo
 
     // Coroutines Job
     private val viewModelJob = Job()
